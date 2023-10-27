@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vanilla weather app</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="src/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="weahter-app-wrapper">
+        <div class="weather-app-container">
+          <div class="overview">
+            <h1 id="city">New York</h1>
+            <ul>
+              <li>Friday 05:00 <span id="date"></span></li>
+              <li id="description" class="description">Clear</li>
+            </ul>
+          </div>
+          <div class="row">
+            <div class="col-6">
+              <div class="d-flex weather-temperature">
+                <img
+                  src="data:image/jpeg;base64,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"
+                  alt="Sunny"
+                  id="icon"
+                  width="54px;"
+                />
+                <div>
+                  <strong id="temperature">12</strong>
+                  <span class="units">&deg;C | <a href="#">&deg;F</a></span>
+                </div>
+              </div>
+            </div>
+            <div class="col-6">
+              <ul>
+                <li>Humidity:35 <span id="Humidity"></span>%</li>
+                <li>Wind:2<span id="wind"></span>km/h</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <small>
+          <a
+            href="https://github.com/Anie001/vanilla-weather-app"
+            target="_blank"
+            >Open Source Code </a
+          >by Aniekeme Ekpoh
+        </small>
+      </div>
+    </div>
+    <script src="src/app.js"></script>
+  </body>
+</html>

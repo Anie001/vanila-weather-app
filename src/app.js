@@ -30,8 +30,7 @@ function displayForecast() {
   days.forEach(function (day) {
     forecastHTML =
       forecastHTML +
-      ` 
-            <div class="row">
+      `
               <div class="col-2">
                 <div>${day}</div>
                 <img

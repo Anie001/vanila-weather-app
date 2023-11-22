@@ -52,9 +52,7 @@ function displayForecast() {
   forecastElement.innerHTML = forecastHTML;
 }
 
-function getForecast(coordinates) {
-  console.log(coordinates);
-}
+function getForecast(coordinates) {}
 
 function displayTemperature(response) {
   let temperatureElement = document.querySelector("#temperature");

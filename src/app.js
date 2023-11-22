@@ -53,7 +53,7 @@ function displayForecast() {
 }
 
 function getForecast(cordinates) {
-  console.loog(cordinates);
+  console.log(cordinates);
 }
 
 function displayTemperature(response) {

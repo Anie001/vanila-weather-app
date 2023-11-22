@@ -52,8 +52,8 @@ function displayForecast() {
   forecastElement.innerHTML = forecastHTML;
 }
 
-function getForecast(cordinates) {
-  console.log(cordinates);
+function getForecast(coordinates) {
+  console.log(coordinates);
 }
 
 function displayTemperature(response) {

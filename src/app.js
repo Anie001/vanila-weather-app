@@ -122,5 +122,5 @@ let celsiusConvert = document.querySelector("#celsius-convert");
 celsiusConvert.addEventListener("click", displayCelsiusTemperature);
 
 search("New York");
-getForecast("paris");
+getForecast("lisbon");
 displayForecast();

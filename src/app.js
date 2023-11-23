@@ -74,8 +74,6 @@ function displayTemperature(response) {
     `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
-
-  getForecast(response.data.cord);
 }
 function search(city) {
   let apiKey = "2e67ada581cbfe3ce3d849417cd6754c";

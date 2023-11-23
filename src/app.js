@@ -11,7 +11,8 @@ function handleSubmit(event) {
 
 function getForecast(city) {
   let apiKey = "2e67ada581cbfe3ce3d849417cd6754c";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?query=${city}&appid=${apiKey}&units=metric`;
+  //let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?query=${city}&appid=${apiKey}&units=metric`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?query=${city}&appid=${apikey}&units=metric`;
   console.log(apiUrl);
 }
 

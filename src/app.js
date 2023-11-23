@@ -23,8 +23,6 @@ function formatDate(timestamp) {
 }
 
 function displayForecast() {
-  console.log(response.data);
-
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class="row">`;
@@ -90,11 +88,6 @@ function handleSubmit(event) {
   let cityInputElement = document.querySelector("#city-input");
   search(cityInputElement.value);
 }
-function getForecast(city) {
-  let apiKey = "2e67ada581cbfe3ce3d849417cd6754c";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-  axios.get(apiUrl).then(displayForecast);
-}
 
 function displayFahrenheitTemperature(event) {
   event.preventDefault();
@@ -124,4 +117,5 @@ fahrenheitConvert.addEventListener("click", displayFahrenheitTemperature);
 let celsiusConvert = document.querySelector("#celsius-convert");
 celsiusConvert.addEventListener("click", displayCelsiusTemperature);
 
-search("Paris");
+search("New York");
+displayForecast();

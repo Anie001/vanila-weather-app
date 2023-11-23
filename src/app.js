@@ -11,12 +11,11 @@ function handleSubmit(event) {
 
 function getForecast(city) {
   let apiKey = "e67ada581cbfe3ce3d849417cd6754c";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/forecast?query=${city}&appid=${apiKey}&units=metric`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?query=${city}&appid=${apiKey}&units=metric`;
   axios(apiUrl).then(displayForecast);
 }
 
-function displayForecast(response) {
-  console.log(response.data);
+function displayForecast() {
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class="row">`;
@@ -91,7 +90,6 @@ function displayTemperature(response) {
     `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
-  getForecast(response.data.city);
 }
 
 function displayFahrenheitTemperature(event) {
@@ -123,3 +121,5 @@ let celsiusConvert = document.querySelector("#celsius-convert");
 celsiusConvert.addEventListener("click", displayCelsiusTemperature);
 
 search("New York");
+getForecast("lisbon");
+displayForecast();

@@ -23,7 +23,7 @@ function formatDate(timestamp) {
 }
 
 function getForecast() {
-  let apiKey = "2e67ada581cbfe3ce3d849417cd6754c";
+  let apiKey = "20563feob4054a551b95t805f4a823e4";
   let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
   console.log(apiUrl);
 }
@@ -82,7 +82,7 @@ function displayTemperature(response) {
   iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 function search(city) {
-  let apiKey = "2e67ada581cbfe3ce3d849417cd6754c";
+  let apiKey = "20563feob4054a551b95t805f4a823e4";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayTemperature);
 }
